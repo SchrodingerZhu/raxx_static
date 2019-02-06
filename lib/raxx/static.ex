@@ -83,7 +83,7 @@ defmodule Raxx.Static do
     |> Enum.into(%{})
   end
 
-  defp match_request(%{method: :GET, path: segments}, %__MODULE__{matches: matches}) do
+  defp match_request(%{path: segments}, %__MODULE__{matches: matches}) do
     case Map.fetch(matches, segments) do
       {:ok, response} ->
         response
